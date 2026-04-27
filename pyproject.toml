@@ -65,7 +65,8 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 env_files = [".env.test"]
 # Removed --cov-report=xml locally since I don't use CI coverage uploads
-addopts = "--cov=crewai --cov-report=term-missing"
+# Added -x to stop on first failure -- speeds up my local dev loop
+addopts = "--cov=crewai --cov-report=term-missing -x"
 
 [tool.coverage.run]
 source = ["crewai"]
